@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Onest', sans-serif;
+    font-size: 1.1rem;
+}
+
+.container {
+    max-height: 40rem;
+    width: 20rem;
+    line-height: 2rem;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(191, 100%, 89%);
+    padding: 1.2rem;
+    border-radius: 1.5rem;
+}
+.quote {
+    display: block;
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    -webkit-appearance: none; /* Remove style in WebKit (Safari, Chrome) */
+    -moz-appearance: none;    /* Remove style in Firefox */
+    appearance: none;         /* Generic */
+    
+    border-radius: 1.5rem;
+    background-color: hsl(341, 100%, 50%);
+    width: 12.5rem;
+    height: 3.125rem;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: hsl(341, 100%, 45%);
+}

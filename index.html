@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Homepage</title>
+    <link rel="stylesheet" type="text/css" href="homestyles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    
+    <audio id="grandpa-theme">
+        <source src="GrandPaTheme.mp3" type="audio/mpeg">
+    </audio>
+    
+<div class="container">
+    <div class="hellokittyimage">
+        </div>
+    <button class="navbutton" id="enter"> Enter </button>
+    
+    <a href="info.html">
+        <button class="navbutton"> Info </button>
+    </a>
+    
+    <a href="credits.html">
+        <button class="navbutton"> Credits </button>
+    </a>
+    
+    <form action="main.html" id="loginform" style="display: none" onsubmit="return validatePassword(event)" method="POST">
+        
+        <label for="password"> Password: </label>
+        </br>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit" class="submit">
+            
+    </form>
+    
+    <button id="back" style="display: none"> Back </button>
+
+    
+</div>
+
+<script>
+    
+    function validatePassword(event) {
+        let inputPassword = document.getElementById("password").value;
+        console.log(inputPassword);
+
+        if (inputPassword === "meow") {
+            return true; // allow form submission
+        } else {
+            alert('Incorrect password!');
+            return false; // prevent form submission
+        }
+    }
+    
+    enterBtn = document.getElementById("enter")
+    enterBtn.addEventListener("click", showLoginForm)
+    
+    function showLoginForm() {
+        navbuttons = document.querySelectorAll(".navbutton")
+        for (let navbtn of navbuttons) {
+            navbtn.style.display = "none";
+        }
+        document.getElementById("back").style.display="inline-block"
+        document.getElementById("loginform").style.display="inline-block"
+        
+        let audio = document.getElementById('grandpa-theme');
+        audio.play();
+    }
+    
+    backBtn = document.getElementById("back")
+    backBtn.addEventListener("click", goBack)
+    
+    function goBack() {
+        navbuttons = document.querySelectorAll(".navbutton")
+        for (let navbtn of navbuttons) {
+            navbtn.style.display = "inline-block";
+        }
+        backBtn.style.display = "none"
+        document.getElementById("loginform").style.display="none"
+    }
+
+</script>
+</body>
+</html>
